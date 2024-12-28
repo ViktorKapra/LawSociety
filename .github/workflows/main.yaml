@@ -45,9 +45,6 @@ jobs:
         - name: Run dotnet-format
           run: dotnet format --verbosity diagnostic
 
-        - name: Install npm
-          run: npm install
-
         - name: Move to client directory
           run: cd ./lawsociety.client
 
