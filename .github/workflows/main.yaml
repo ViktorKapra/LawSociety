@@ -46,9 +46,7 @@ jobs:
           run: dotnet format --verbosity diagnostic
 
         - name: Move to client directory
-          run: cd ./lawsociety.client
+          run: cd ./lawsociety.client | npm run lint
 
-        - name: Run stylelint
-          run:  npm run lint
 
 
