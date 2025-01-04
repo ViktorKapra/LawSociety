@@ -46,7 +46,7 @@ jobs:
           run: dotnet format --verbosity diagnostic
 
         - name : Install ESLint
-          run: npm install eslint --save-dev
+          run: npm install --save-dev eslint   eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh
 
         - name: Run stylelint
           run: npm run lint --prefix ./lawsociety.client/
