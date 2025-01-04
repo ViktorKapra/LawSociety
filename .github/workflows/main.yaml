@@ -45,6 +45,9 @@ jobs:
         - name: Run dotnet-format
           run: dotnet format --verbosity diagnostic
 
+        - name : Install ESLint
+          run: npm install eslint --save-dev
+
         - name: Run stylelint
           run: npm run lint --prefix ./lawsociety.client/
 
