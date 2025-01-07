@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawSociety.Server", "LawSociety.Server\LawSociety.Server.csproj", "{407F10E8-D08F-454A-B94D-54ABE36AA85E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LawSociety.Server", "LawSociety.Server\LawSociety.Server.csproj", "{407F10E8-D08F-454A-B94D-54ABE36AA85E}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "lawsociety.client", "lawsociety.client\lawsociety.client.esproj", "{51F03AD9-C397-4C42-B259-B98D41D54C62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawSociety.test", "LawSociety.test\LawSociety.test.csproj", "{8F46C84E-7B59-4825-BB28-C74CA786B7F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{51F03AD9-C397-4C42-B259-B98D41D54C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51F03AD9-C397-4C42-B259-B98D41D54C62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51F03AD9-C397-4C42-B259-B98D41D54C62}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8F46C84E-7B59-4825-BB28-C74CA786B7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F46C84E-7B59-4825-BB28-C74CA786B7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F46C84E-7B59-4825-BB28-C74CA786B7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F46C84E-7B59-4825-BB28-C74CA786B7F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
