@@ -88,4 +88,4 @@ jobs:
 
       - name: Run Snyk Test
         working-directory: ${{github.workspace}}/
-        run: snyk test
+        run: snyk test --all-projects
