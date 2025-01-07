@@ -40,7 +40,7 @@ jobs:
       - name: Tag Docker image
         working-directory: ${{github.workspace}}/LawSociety.Server
         run: |
-          docker tag lawsocietyserver kapracaptain/law-society:latest
+          docker tag lawsocietyserver:dev kapracaptain/law-society:latest
 
       - name: Push Docker Image
         working-directory: ${{github.workspace}}/LawSociety.Server
