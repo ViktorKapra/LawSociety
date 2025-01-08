@@ -40,7 +40,7 @@ jobs:
       - name: Tag Docker image
         working-directory: ${{github.workspace}}/LawSociety.Server
         run: |
-          docker tag lawsocietyserver:dev kapracaptain/law-society:latest
+          docker build -f "D:\DevOps\project\LawSociety\LawSociety.Server\Dockerfile" --force-rm -t law-society:latest --target base  --build-arg "BUILD_CONFIGURATION=Debug" --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=LawSociety.Server" "D:\DevOps\project\LawSociety"
 
       - name: Push Docker Image
         working-directory: ${{github.workspace}}/LawSociety.Server
