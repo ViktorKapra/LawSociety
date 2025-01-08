@@ -40,9 +40,9 @@ jobs:
       - name: Build Docker image
         working-directory: ${{github.workspace}}/LawSociety.Server
         run: |
-          docker build -f "${{github.workspace}}/LawSociety.Server/Dockerfile" --force-rm -t kapracaptain/law-society --target base  --build-arg "BUILD_CONFIGURATION=Debug" --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=LawSociety.Server" "${{github.workspace}}/"
+          docker build -f "${{github.workspace}}/LawSociety.Server/Dockerfile" --force-rm -t ${{ secrets.DOCKER_USERNAME }}/law-society --target base  --build-arg "BUILD_CONFIGURATION=Debug" --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=LawSociety.Server" "${{github.workspace}}/"
 
       - name: Push Docker Image
         working-directory: ${{github.workspace}}
         run: |
-          docker push kapracaptain/law-society:tagname
+          docker push ${{ secrets.DOCKER_USERNAME }}/law-society:tagname
