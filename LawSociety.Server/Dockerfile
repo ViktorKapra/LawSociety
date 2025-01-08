@@ -9,7 +9,9 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+COPY ["lawsociety.client/nuget.config", "lawsociety.client/"]
 COPY ["LawSociety.Server/LawSociety.Server.csproj", "LawSociety.Server/"]
+COPY ["lawsociety.client/lawsociety.client.esproj", "lawsociety.client/"]
 RUN dotnet restore "./LawSociety.Server/LawSociety.Server.csproj"
 COPY . .
 WORKDIR "/src/LawSociety.Server"
