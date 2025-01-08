@@ -37,12 +37,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Tag Docker image
+      - name: Build Docker image
         working-directory: ${{github.workspace}}/LawSociety.Server
         run: |
           docker build -f "${{github.workspace}}/LawSociety.Server/Dockerfile" --force-rm -t law-society:latest --target base  --build-arg "BUILD_CONFIGURATION=Debug" --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=LawSociety.Server" "${{github.workspace}}/"
 
       - name: Push Docker Image
-        working-directory: ${{github.workspace}}/LawSociety.Server
+        working-directory: ${{github.workspace}}
         run: |
           docker push kapracaptain/law-society:latest
