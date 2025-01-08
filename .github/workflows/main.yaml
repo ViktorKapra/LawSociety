@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - feature/*
+      #- feature/* stop for now
   pull_request:
     branches:
       - main
