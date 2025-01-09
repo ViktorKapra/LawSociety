@@ -41,68 +41,30 @@ This project is a template for a web application that uses React for the fronten
 #### Continuous Integration (CI)
 
 The CI process for this repository is defined in the `main.yml` file and is triggered on:
-- Push to the main, development, hotfi
+- Push 
 - Pull requests targeting the `main` or `development` branches
 
-The CI workflow consists of four jobs:
+The CI workflow is runned on `ubuntu-latest` and consists of four jobs:
 
 1. **Build Job**
-   - Runs on `ubuntu-latest`
-   - Steps:
-     - Checks out the repository
-     - Sets up .NET Core 8.0
-     - Restores dependencies
-     - Builds the project in Release configuration
+   - Builds the the project
 
 2. **Unit Test Job**
-   - Runs on `ubuntu-latest`
-   - Depends on the build job
-   - Steps:
-     - Checks out the repository
-     - Sets up .NET Core 8.0
-     - Restores dependencies
-     - Runs unit tests
+   - Runs Xunit test on the backend 
 
 3. **Style Lint Job**
-   - Runs on `ubuntu-latest`
-   - Depends on the build job
-   - Steps:
-     - Checks out the repository
-     - Installs `dotnet-format`
-     - Runs `dotnet format`
-     - Installs ESLint and related plugins
-     - Runs style lint using ESLint
+   - Runs Linter and .NET format 
 
 4. **Security Check Job**
-   - Runs on `ubuntu-latest`
-   - Depends on the build job
-   - Steps:
-     - Checks out the repository
-     - Sets up .NET Core 8.0
-     - Restores dependencies
-     - Installs Snyk CLI and authenticates using a secret token
-     - Runs Snyk test for security vulnerabilities
+   - Runs on **Snyc** and check for vulnerabilities
 
 #### Continuous Deployment (CD)
 
 The CD process is defined in the `CD.yml` file and is triggered on:
-- Push to the `development` branch
-- Pull requests targeting the `development` branch
+- Push to the `development`, `main` branches
+- Pull requests targeting the `development` and `main` branches
 
 The CD workflow consists of a single job:
 
 1. **Build and Push Job**
-   - Runs on `ubuntu-latest`
-   - Steps:
-     - Checks out the repository
-     - Sets up .NET Core 8.0
-     - Restores dependencies
-     - Builds the project in Release configuration
-     - Logs in to Docker Hub using secrets
-     - Sets up Docker Buildx
-     - Builds the Docker image for the `LawSociety.Server` project
-     - Installs Trivy and runs it to scan the Docker image for vulnerabilities
-     - Pushes the Docker image to Docker Hub
-
-### License:
-This project is licensed under the MIT License.
+   - Ont this job is build an docker image of the project. Then the image is checked with **Trivy** and finaly it is push to DockerHub.
